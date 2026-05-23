@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Diversified Botanics — Overview</title>
+<link rel="stylesheet" href="../../colors_and_type.css?v=overview-video-height" />
+<style>
+  html, body { margin: 0; height: 100%; overflow: hidden; background: var(--neutral-50); }
+  #root { height: 100%; }
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-thumb { background: var(--neutral-200); border-radius: 999px; border: 2px solid transparent; background-clip: padding-box; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--neutral-300); border: 2px solid transparent; background-clip: padding-box; }
+  ::-webkit-scrollbar-track { background: transparent; }
+</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel" src="./components/Icons.jsx"></script>
+<script type="text/babel" src="./components/Primitives.jsx"></script>
+<script type="text/babel" src="./components/Shell.jsx?v=nav-example"></script>
+<script type="text/babel" src="./components/Charts.jsx?v=line-variants"></script>
+<script type="text/babel" src="./components/Widgets.jsx?v=video-cover-fit"></script>
+<script type="text/babel" src="./components/AnswerLayout.jsx"></script>
+<script type="text/babel" src="./pages/Overview.jsx?v=video-height-match"></script>
+<script type="text/babel" src="./pages/Analytics.jsx?v=activity-5-equal"></script>
+<script type="text/babel" src="./pages/Dashboard.jsx?v=no-feed"></script>
+<script type="text/babel" src="./pages/Timeline.jsx"></script>
+<script type="text/babel" src="./pages/AutomationData.jsx?v=knowledge-base-value"></script>
+<script type="text/babel" src="./pages/Automation.jsx?v=role-phases-two"></script>
+<script type="text/babel" src="./pages/Plan90.jsx?v=no-personal-dev"></script>
+<script type="text/babel" src="./pages/Process.jsx"></script>
+<script type="text/babel">
+
+  const App = () => {
+    const [nav, setNav] = React.useState("overview");
+    return (
+      <div style={{
+        display: "flex", flexDirection: "column", height: "100%",
+        background:
+          "radial-gradient(110% 70% at 0% 0%, oklch(0.985 0.020 70) 0%, transparent 55%), " +
+          "radial-gradient(100% 70% at 100% 0%, oklch(0.92 0.042 276) 0%, transparent 55%), " +
+          "var(--neutral-50)"
+      }}>
+        <Topbar active={nav} onNav={setNav} />
+        <main style={{ flex: 1, overflowY: "auto", padding: "20px 28px 32px" }}>
+          {nav === "dashboard" ? <Dashboard />
+           : nav === "plan90"       ? <Plan90 />
+           : nav === "timeline"     ? <Timeline />
+           : nav === "automation"   ? <Automation />
+           : nav === "process"      ? <Process />
+           : <Overview />}
+        </main>
+      </div>
+    );
+  };
+  ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>

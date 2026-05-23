@@ -1,0 +1,14 @@
+/* Shared styles for preview cards in the Design System tab */
+@import url("../colors_and_type.css");
+html, body { margin: 0; padding: 16px 18px; background: var(--surface); font-family: var(--font-sans); color: var(--fg); }
+.row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.col { display: flex; flex-direction: column; gap: 12px; }
+.label-mono { font-family: var(--font-mono); font-size: 10px; color: var(--fg-faint); letter-spacing: 0; }
+.label-eyebrow { font-size: 10px; color: var(--fg-subtle); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 500; }
+.divider { height: 1px; background: var(--divider); }
+.swatch {
+  width: 100%; aspect-ratio: 1.6 / 1; border-radius: 6px;
+  border: 1px solid var(--border);
+  display: flex; align-items: flex-end; padding: 6px 8px;
+  font-family: var(--font-mono); font-size: 10px; color: var(--fg);
+}
