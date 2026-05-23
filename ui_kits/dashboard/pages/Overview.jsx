@@ -56,7 +56,7 @@ function Overview() {
             src="./assets/90days.mov"
             badge="Welcome video"
             eyebrow={null}
-            title="Chief of Staff · Diversified Botanics"
+            title={null}
             subtitle={null}
             chapters={null}
           />
@@ -66,6 +66,7 @@ function Overview() {
           <div className="plan90-aside__stack">
             <Card padding={18} className="plan90-outline">
               <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-4)" }}>
+                <div className="card-hero-title">Diversified Botanics</div>
                 <p className="card-subtitle">
                   Diversified Botanics is in a strong position to leverage systems automation, operational infrastructure, and agentic AI workflows to accelerate growth and scale the business efficiently. The first 90 days are focused on building the operational foundation for greater visibility, accountability, communication, and execution across the organization.
                 </p>

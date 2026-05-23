@@ -173,6 +173,7 @@ function WelcomeVideoCard({
   };
 
   const durationLabel = videoDuration ? formatDuration(videoDuration) : duration;
+  const showFooter = eyebrow || title || subtitle || (chapters && chapters.length > 0);
 
   return React.createElement(Card, {
     padding: 0,
@@ -247,13 +248,12 @@ function WelcomeVideoCard({
       }, durationLabel),
     ),
 
-    // Content
-    React.createElement("div", {
+    showFooter && React.createElement("div", {
       className: src ? "plan90-welcome-video__footer" : undefined,
       style: { padding: 16, display: "flex", flexDirection: "column", gap: 6, flexShrink: 0, borderTop: "0.5px solid var(--border)" }
     },
       eyebrow && React.createElement("div", { className: "eyebrow" }, eyebrow),
-      React.createElement("div", { className: "card-hero-title" }, title),
+      title && React.createElement("div", { className: "card-hero-title" }, title),
       subtitle && React.createElement("div", { className: "card-subtitle", style: { maxWidth: 540 } }, subtitle),
 
       chapters && chapters.length > 0 && React.createElement("div", {

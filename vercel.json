@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    { "source": "/components/:path*", "destination": "/ui_kits/dashboard/components/:path*" },
+    { "source": "/pages/:path*", "destination": "/ui_kits/dashboard/pages/:path*" },
+    { "source": "/assets/:path*", "destination": "/ui_kits/dashboard/assets/:path*" },
+    { "source": "/", "destination": "/ui_kits/dashboard/index.html" }
+  ]
+}
